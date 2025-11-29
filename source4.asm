@@ -63,6 +63,9 @@ main:
         jle end_cycle
         
         mov eax, dword[twenty_twenty_two]
+        sub dword[cars + ecx + car.year], eax
+        mov eax, dword[cars + ecx + car.year]
+        neg eax
         mov dword[cars + ecx + car.year], eax
         
         push ecx

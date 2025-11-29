@@ -12,8 +12,12 @@ section .text
 global main
 main:
     sub esp, 8
-    mov byte[previous], 0
-    
+
+    push previous
+    push format_in
+    call scanf
+    add esp, 8
+            
     start_cycle:
         push s
         push format_in
